@@ -1,5 +1,5 @@
 const form =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfe_E9xfKNW5ZksXG9jZKgZK16-gCtYBdEfd-t4j97fwIA4MQ/viewform?usp=pp_url&entry.1579058291=ex&entry.1050726868=exid";
+  "https://docs.google.com/forms/d/e/1FAIpQLSe6QkinSfvuI6P5Dg-L-J9uAAEeL9AMV2uBQViT0H3nuntF-Q/viewform?usp=pp_url&entry.469246373=Name&entry.1403942219=Unique+ID&entry.829537125=Email+ID&entry.1178935119=Phone+number";
 
 function preprocess(url) {
   var split_up = url.split("?");
@@ -11,7 +11,7 @@ function preprocess(url) {
     .slice(1)
     .map((i) => {
       const id = i.split("=");
-      return id[0];
+      return { entry_name: id[1].replace("+", " "), entry_id: id[0] };
     });
 
   console.log(og_url);
